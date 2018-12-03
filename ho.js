@@ -25,6 +25,8 @@ let t = 0;
 const enemySpeed = 3;
 let heroSpeed = 5;
 
+const gameover = new Image();
+gameover.src = "http://udgtv.com/wp-content/uploads/2018/05/Game-Over.jpg";
 
 const background = new Image();
 background.src = "https://i.ytimg.com/vi/Sv8HPkt-RaY/maxresdefault.jpg";
@@ -458,6 +460,12 @@ for( let g = 1; g<mspeed.length; g++){
 
   context.fillText("Score: "+ t,10,50);
     context.font = "30px Sans-Serif";
+	      if (die===0){
+  	
+    context.drawImage(gameover, 0, 0, canvas.width, canvas.height);
+  	
+  	
+  }
     
 };
 
