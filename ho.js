@@ -1,7 +1,6 @@
 
 
 
-
 const canvas = document.getElementById("c1");
 const context = canvas.getContext("2d");
 
@@ -18,7 +17,7 @@ canvas.height = 630;
 
 let chec = 0;
 let t = 0;
-
+let die = 1;
 
 
 
@@ -220,10 +219,10 @@ function yourFunction(){
 								//console.log(highscore);
 
 								
-								alert("GAME OVER "+" "+" Click OK to restart");
-								if(!alert("GAME OVER "+" "+" Click OK to restart")){window.location.reload();}
+								//alert("GAME OVER "+" "+" Click OK to restart");
+								//if(!alert("GAME OVER "+" "+" Click OK to restart")){window.location.reload();}
 
-
+									die = 0;
 
 								
 										}
@@ -412,6 +411,7 @@ for( let b = 1; b<star.length; b++){
 for( let g = 1; g<mspeed.length; g++){
 		
 		mspeed[g].update();
+
 		
 	}
 
@@ -460,12 +460,13 @@ for( let g = 1; g<mspeed.length; g++){
 
   context.fillText("Score: "+ t,10,50);
     context.font = "30px Sans-Serif";
-	      if (die===0){
+      if (die===0){
   	
     context.drawImage(gameover, 0, 0, canvas.width, canvas.height);
   	
   	
   }
+	
     
 };
 
@@ -476,7 +477,8 @@ const loop = function() {
 
 	draw();
 	update();
-	
+
+
 	
 	requestAnimationFrame(loop);
 };
@@ -497,6 +499,7 @@ function point(){
 }
 
 point(t);
+
 
 
 
